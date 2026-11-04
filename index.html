@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyWise - Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 StudyWise</h1>
+    <p>Enter your subjects and exam dates. Get a daily study plan instantly.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Add a subject</h2>
+      <form id="subject-form">
+        <label>Subject name
+          <input type="text" id="name" placeholder="e.g. Mathematics" required>
+        </label>
+        <label>Exam date
+          <input type="date" id="exam" required>
+        </label>
+        <label>Difficulty
+          <select id="difficulty">
+            <option value="1">Easy</option>
+            <option value="2" selected>Medium</option>
+            <option value="3">Hard</option>
+          </select>
+        </label>
+        <button type="submit">Add subject</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>2. Your subjects</h2>
+      <ul id="subject-list"></ul>
+      <p id="empty-msg" class="muted">No subjects yet. Add one above.</p>
+    </section>
+
+    <section class="card">
+      <h2>3. Daily study time</h2>
+      <label>Hours you can study per day
+        <input type="number" id="hours" min="1" max="16" value="4">
+      </label>
+      <button id="generate">Generate my plan</button>
+    </section>
+
+    <section class="card" id="plan-card" hidden>
+      <h2>Your study plan</h2>
+      <div id="today-box"></div>
+      <h3>Next 7 days</h3>
+      <div id="plan"></div>
+    </section>
+  </main>
+
+  <footer>Made at a hackathon with ❤️ | Data is saved in your browser</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
